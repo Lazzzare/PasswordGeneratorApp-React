@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const buttonArrowSvg = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -13,7 +15,45 @@ const buttonArrowSvg = (
   </svg>
 );
 
+const checkBoxArray = [
+  {
+    id: 1,
+    text: "Include Uppercase Letters",
+  },
+  {
+    id: 2,
+    text: "Include Lowercase Letters",
+  },
+  {
+    id: 3,
+    text: "Include Numbers",
+  },
+  {
+    id: 4,
+    text: "Include Symbols",
+  },
+];
+
+const checkSvg = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+  >
+    <rect width="20" height="20" fill="#A4FFAF" />
+    <path
+      d="M4 10.6066L7.39341 14L15.3934 6"
+      stroke="#18171F"
+      strokeWidth="3"
+    />
+  </svg>
+);
+
 const PasswordGenerator = () => {
+  const [checked, setChecked] = useState(0);
+
   return (
     <div className="bg-lightBlack p-4 mt-4 w-[343px] mx-auto">
       <div className="w-full flex flex-row justify-between items-center">
@@ -25,30 +65,30 @@ const PasswordGenerator = () => {
         <input type="range" className="mx-auto w-full" />
       </div>
       {/* CheckBox */}
-      <div className="flex flex-col gap-5 text-white mt-8">
-        <div className="flex flex-row gap-5">
-          <input type="checkbox" />
-          <h2>Include Uppercase Letters</h2>
-        </div>
-        <div className="flex flex-row gap-5">
-          <input type="checkbox" />
-          <h2>Include Lowercase Letters</h2>
-        </div>
-        <div className="flex flex-row gap-5">
-          <input type="checkbox" />
-          <h2>Include Numbers</h2>
-        </div>
-        <div className="flex flex-row gap-5">
-          <input type="checkbox" />
-          <h2>Include Symbols</h2>
-        </div>
-      </div>
+      {checkBoxArray.map((item, id) => {
+        return (
+          <div key={id} className="flex flex-col gap-5 text-white mt-8">
+            <div
+              onClick={() => setChecked(item.id)}
+              className="flex flex-row gap-5 items-center cursor-pointer"
+            >
+              {checked === item.id ? (
+                checkSvg
+              ) : (
+                <div className="border-2 w-5 h-5 border-white"></div>
+              )}
+              <h2>{item.text}</h2>
+            </div>
+          </div>
+        );
+      })}
+
       {/* Strength */}
       <div></div>
       {/* GeneratorButton */}
       <div className="flex flex-row relative mt-4">
         <button className="uppercase bg-green text-black py-[18px] w-full">
-          Generator{" "}
+          Generate{" "}
           <span className="absolute top-6 right-24">{buttonArrowSvg}</span>
         </button>
       </div>
