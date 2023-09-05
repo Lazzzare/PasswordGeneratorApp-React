@@ -12,6 +12,7 @@ export default {
         red: "#F64A4A",
         orange: "#FB7C58",
         yellow: "#F8CD65",
+        bgColor: "#14131B",
       },
     },
   },
