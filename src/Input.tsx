@@ -25,13 +25,15 @@ interface InputProps {
 const Input = ({ title }: InputProps) => {
   return (
     <div>
-      <h1 className="text-grey text-center">{title}</h1>
-      <form className="max-w-[343px] mx-auto">
+      <h1 className="text-grey text-center md:text-2xl mb-4 md:mb-8">
+        {title}
+      </h1>
+      <form className="max-w-[343px] md:max-w-[540px] mx-auto">
         <div className="flex flex-row relative">
           <input
             type="text"
             placeholder="P4$5W0rD!"
-            className="w-[343px] bg-lightBlack text-white text-xl pt-[17px] pb-[15px] pl-4 outline-none"
+            className="w-[343px] md:w-[540px] bg-lightBlack text-white text-xl pt-[17px] md:py-5 md:pl-8 pb-[15px] pl-4 outline-none"
           />
           {emptyCopyImage}
         </div>

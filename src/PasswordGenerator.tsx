@@ -55,10 +55,10 @@ const PasswordGenerator = () => {
   const [checked, setChecked] = useState(0);
 
   return (
-    <div className="bg-lightBlack p-4 mt-4 w-[343px] mx-auto">
+    <div className="bg-lightBlack p-4 md:pt-6 md:px-8 md:pb-8 mt-4 w-[343px] md:w-[540px] mx-auto">
       <div className="w-full flex flex-row justify-between items-center">
-        <h3 className="text-white">Character Length</h3>
-        <span className="text-green text-2xl">10</span>
+        <h3 className="text-white md:text-lg">Character Length</h3>
+        <span className="text-green text-2xl md:text-[32px]">10</span>
       </div>
       {/* CharacterAmount */}
       <div className="mt-3 mx-auto w-full">
@@ -77,19 +77,33 @@ const PasswordGenerator = () => {
               ) : (
                 <div className="border-2 w-5 h-5 border-white"></div>
               )}
-              <h2>{item.text}</h2>
+              <h2 className="text-white md:text-lg">{item.text}</h2>
             </div>
           </div>
         );
       })}
 
       {/* Strength */}
-      <div></div>
+      <div className="bg-darkBlack py-[14px] px-4 mt-9 flex flex-row justify-between items-center">
+        <h3 className="text-grey">STRENGTH</h3>
+        <div className="flex items-center gap-4">
+          <h2 className="text-grey text-lg">Weak</h2>
+          {/* Bars */}
+          <div className="flex flex-row gap-2">
+            <div className="w-[10px] h-7 border-2 border-white"></div>
+            <div className="w-[10px] h-7 border-2 border-white"></div>
+            <div className="w-[10px] h-7 border-2 border-white"></div>
+            <div className="w-[10px] h-7 border-2 border-white"></div>
+          </div>
+        </div>
+      </div>
       {/* GeneratorButton */}
       <div className="flex flex-row relative mt-4">
         <button className="uppercase bg-green text-black py-[18px] w-full">
           Generate{" "}
-          <span className="absolute top-6 right-24">{buttonArrowSvg}</span>
+          <span className="absolute top-6 right-24 md:right-44">
+            {buttonArrowSvg}
+          </span>
         </button>
       </div>
     </div>
