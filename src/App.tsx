@@ -3,7 +3,7 @@ import PasswordGenerator from "./PasswordGenerator";
 
 const App = () => {
   return (
-    <div className="w-full h-screen bg-bgColor flex flex-col">
+    <div className="w-full h-screen bg-bgColor flex flex-col justify-center">
       <Input title="Password Generator" />
       <PasswordGenerator />
     </div>
