@@ -25,6 +25,7 @@ const App = () => {
 
     setRandomCharacters(result);
   };
+
   return (
     <div className="w-full h-screen flex-col bg-bgColor flex justify-center">
       <Input
