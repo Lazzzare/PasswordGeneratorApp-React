@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+input[type="range"] {
+  accent-color: #a4ffaf;
+}
+
 @layer base {
   html {
     font-family: "JetBrains Mono", monospace;
