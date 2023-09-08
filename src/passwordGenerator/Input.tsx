@@ -52,7 +52,7 @@ const Input = ({
         {title}
       </h1>
       <form className="max-w-[343px] md:max-w-[540px] mx-auto">
-        <div className="flex flex-row relative w-full">
+        <div className="flex flex-row items-center relative w-full">
           <input
             value={randomCharacters}
             onChange={() => setRandomCharacters(randomCharacters)}
