@@ -1,3 +1,7 @@
+interface PasswordGeneratorProps {
+  generateRandomCharacters: () => void;
+}
+
 const buttonArrowSvg = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -13,10 +17,15 @@ const buttonArrowSvg = (
   </svg>
 );
 
-const GeneratorButton = () => {
+const GeneratorButton = ({
+  generateRandomCharacters,
+}: PasswordGeneratorProps) => {
   return (
     <div className="flex flex-row relative mt-4 md:mt-8">
-      <button className="uppercase bg-green text-black py-[18px] w-full">
+      <button
+        onClick={generateRandomCharacters}
+        className="uppercase bg-green text-black py-[18px] w-full"
+      >
         Generate{" "}
         <span className="absolute top-6 right-24 md:right-44">
           {buttonArrowSvg}
