@@ -3,7 +3,7 @@ import { useState } from "react";
 interface InputProps {
   title: string;
   randomCharacters: string;
-  setRandomCharacters: (e: any) => void;
+  setRandomCharacters: (e: string) => void;
 }
 
 const Input = ({
@@ -26,7 +26,6 @@ const Input = ({
       }, 3000);
     }
   };
-
   const emptyCopyImage = (
     <span className="text-red-500">
       <svg
@@ -46,6 +45,7 @@ const Input = ({
       </svg>
     </span>
   );
+
   return (
     <div>
       <h1 className="text-grey text-center md:text-2xl mb-4 md:mb-8">
