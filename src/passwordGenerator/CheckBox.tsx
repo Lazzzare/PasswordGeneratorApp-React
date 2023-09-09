@@ -1,24 +1,3 @@
-import { useState } from "react";
-
-const checkBoxArray = [
-  {
-    id: 1,
-    text: "Include Uppercase Letters",
-  },
-  {
-    id: 2,
-    text: "Include Lowercase Letters",
-  },
-  {
-    id: 3,
-    text: "Include Numbers",
-  },
-  {
-    id: 4,
-    text: "Include Symbols",
-  },
-];
-
 const checkSvg = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -36,17 +15,26 @@ const checkSvg = (
   </svg>
 );
 
-const CheckBox = () => {
-  const [checked, setChecked] = useState(0);
+interface CheckBoxProps {
+  handleCheckboxClick: (index: number) => void;
+  checkBoxArray: Array<{ id: number; text: string }>;
+  checkboxStates: Array<boolean>;
+}
+
+const CheckBox = ({
+  handleCheckboxClick,
+  checkBoxArray,
+  checkboxStates,
+}: CheckBoxProps) => {
   return (
     <div className="flex flex-col gap-5 text-white mt-8">
-      {checkBoxArray.map((item) => (
+      {checkBoxArray.map((item, index) => (
         <div
-          onClick={() => setChecked(item.id)}
+          onClick={() => handleCheckboxClick(index)}
           key={item.id}
           className="flex flex-row gap-5 items-center cursor-pointer"
         >
-          {checked === item.id ? (
+          {checkboxStates[index] ? (
             checkSvg
           ) : (
             <div className="border-2 w-5 h-5 border-white"></div>
