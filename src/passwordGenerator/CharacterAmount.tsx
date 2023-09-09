@@ -1,6 +1,8 @@
+import { ChangeEvent } from "react";
+
 interface CharacterAmountProps {
   rangeValue: number;
-  handleInputChange: (e: any) => void;
+  handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const CharacterAmount = ({
