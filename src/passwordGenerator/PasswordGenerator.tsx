@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from "react";
+import { ChangeEvent } from "react";
 import Strength from "./Strength";
 import GeneratorButton from "./GeneratorButton";
 import CheckBox from "./CheckBox";
@@ -8,41 +8,19 @@ interface props {
   generateRandomCharacters: () => void;
   rangeValue: number;
   handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleCheckboxClick: (index: number) => void;
+  checkBoxArray: { id: number; text: string }[];
+  checkboxStates: boolean[];
 }
-
-const checkBoxArray = [
-  {
-    id: 1,
-    text: "Include Uppercase Letters",
-  },
-  {
-    id: 2,
-    text: "Include Lowercase Letters",
-  },
-  {
-    id: 3,
-    text: "Include Numbers",
-  },
-  {
-    id: 4,
-    text: "Include Symbols",
-  },
-];
 
 const PasswordGenerator = ({
   generateRandomCharacters,
   rangeValue,
   handleInputChange,
+  handleCheckboxClick,
+  checkBoxArray,
+  checkboxStates,
 }: props) => {
-  const [checkboxStates, setCheckboxStates] = useState(
-    checkBoxArray.map(() => false)
-  );
-
-  const handleCheckboxClick = (index: number) => {
-    const updatedStates = [...checkboxStates];
-    updatedStates[index] = !updatedStates[index];
-    setCheckboxStates(updatedStates);
-  };
   return (
     <div className="bg-lightBlack p-4 md:pt-6 md:px-8 md:pb-8 mt-4 w-[343px] md:w-[540px] mx-auto">
       <CharacterAmount
@@ -54,7 +32,7 @@ const PasswordGenerator = ({
         checkBoxArray={checkBoxArray}
         checkboxStates={checkboxStates}
       />
-      <Strength />
+      <Strength checkboxStates={checkboxStates} />
       <GeneratorButton generateRandomCharacters={generateRandomCharacters} />
     </div>
   );
