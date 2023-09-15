@@ -59,7 +59,6 @@ const App = () => {
         generateRandomCharacters={generateRandomCharacters}
         rangeValue={rangeValue}
         handleInputChange={handleInputChange}
-        //
         handleCheckboxClick={handleCheckboxClick}
         checkBoxArray={[
           { id: 0, text: "Uppercase Letters" },
