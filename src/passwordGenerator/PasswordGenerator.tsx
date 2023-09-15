@@ -32,7 +32,7 @@ const PasswordGenerator = ({
         checkBoxArray={checkBoxArray}
         checkboxStates={checkboxStates}
       />
-      <Strength checkboxStates={checkboxStates} />
+      <Strength />
       <GeneratorButton generateRandomCharacters={generateRandomCharacters} />
     </div>
   );
