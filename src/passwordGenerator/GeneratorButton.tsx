@@ -20,10 +20,14 @@ const buttonArrowSvg = (
 const GeneratorButton = ({
   generateRandomCharacters,
 }: PasswordGeneratorProps) => {
+  const handleClick = () => {
+    generateRandomCharacters(); // Trigger the generateRandomCharacters function
+  };
   return (
     <div className="flex flex-row relative mt-4 md:mt-8">
       <button
-        onClick={generateRandomCharacters}
+        onClick={handleClick}
+        // onClick={generateRandomCharacters}
         className="uppercase bg-green text-black py-[18px] w-full"
       >
         Generate{" "}
