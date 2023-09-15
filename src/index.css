@@ -7,6 +7,11 @@ input[type="range"] {
   accent-color: #a4ffaf;
 }
 
+.active-bar {
+  background: #f8cd65;
+  border-color: #f8cd65;
+}
+
 @layer base {
   html {
     font-family: "JetBrains Mono", monospace;
