@@ -55,7 +55,7 @@ const Input = ({
         <div className="flex flex-row items-center relative w-full">
           <input
             value={randomCharacters}
-            onChange={() => setRandomCharacters(randomCharacters)}
+            onChange={(e) => setRandomCharacters(e.target.value)}
             type="text"
             placeholder="P4$5W0rD!"
             className="w-[343px] md:w-[540px] bg-lightBlack text-white text-xl pt-[17px] md:py-5 md:pl-8 pb-[15px] pl-4 outline-none"
