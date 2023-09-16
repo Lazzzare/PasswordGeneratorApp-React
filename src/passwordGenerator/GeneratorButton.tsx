@@ -1,5 +1,8 @@
-interface PasswordGeneratorProps {
+import React from "react";
+
+interface GeneratorButtonProps {
   generateRandomCharacters: () => void;
+  updateStrength: () => void;
 }
 
 const buttonArrowSvg = (
@@ -19,15 +22,17 @@ const buttonArrowSvg = (
 
 const GeneratorButton = ({
   generateRandomCharacters,
-}: PasswordGeneratorProps) => {
+  updateStrength,
+}: GeneratorButtonProps) => {
   const handleClick = () => {
-    generateRandomCharacters(); // Trigger the generateRandomCharacters function
+    generateRandomCharacters();
+    updateStrength(); // Call the updateStrength function
   };
+
   return (
     <div className="flex flex-row relative mt-4 md:mt-8">
       <button
         onClick={handleClick}
-        // onClick={generateRandomCharacters}
         className="uppercase bg-green text-black py-[18px] w-full"
       >
         Generate{" "}
