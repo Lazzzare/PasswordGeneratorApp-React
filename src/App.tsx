@@ -55,6 +55,7 @@ const App = () => {
         randomCharacters={randomCharacters}
         setRandomCharacters={setRandomCharacters}
       />
+
       <PasswordGenerator
         generateRandomCharacters={generateRandomCharacters}
         rangeValue={rangeValue}
