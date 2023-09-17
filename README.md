@@ -1,6 +1,6 @@
 # TodoApp
 
-  <img src="./src/assets/bg.PNG" alt="First Image" width={640}>
+  <img src="./src/assets/bg.PNG" alt="First Image" width="640px">
 
 # Getting Started
 
