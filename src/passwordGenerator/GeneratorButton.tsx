@@ -1,8 +1,5 @@
-import React from "react";
-
 interface GeneratorButtonProps {
   generateRandomCharacters: () => void;
-  updateStrength: () => void;
 }
 
 const buttonArrowSvg = (
@@ -22,11 +19,9 @@ const buttonArrowSvg = (
 
 const GeneratorButton = ({
   generateRandomCharacters,
-  updateStrength,
 }: GeneratorButtonProps) => {
   const handleClick = () => {
     generateRandomCharacters();
-    updateStrength(); // Call the updateStrength function
   };
 
   return (
