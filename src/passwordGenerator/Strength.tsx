@@ -8,13 +8,13 @@ interface StrengthProps {
 
 const Strength: React.FC<StrengthProps> = ({ count, rangeValue }) => {
   const determineStrength = (count: number) => {
-    if (count === 1 && rangeValue >= 3) {
+    if (count === 1 && rangeValue > 0) {
       return "TOO WEAK!";
-    } else if (count === 2 && rangeValue > 5) {
+    } else if (count === 2 && rangeValue > 0) {
       return "WEAK";
-    } else if (count === 3 && rangeValue > 8) {
+    } else if (count === 3 && rangeValue > 0) {
       return "MEDIUM";
-    } else if (count === 4 && rangeValue > 6) {
+    } else if (count === 4 && rangeValue > 0) {
       return "STRONG";
     }
     return "";
