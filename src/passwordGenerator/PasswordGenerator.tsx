@@ -34,13 +34,12 @@ const PasswordGenerator = ({
         checkBoxArray={checkBoxArray}
         checkboxStates={checkboxStates}
       />
-      <Strength count={trueCount} />
-      <GeneratorButton
+      <Strength
+        count={trueCount}
+        rangeValue={rangeValue}
         generateRandomCharacters={generateRandomCharacters}
-        updateStrength={function (): void {
-          throw new Error("Function not implemented.");
-        }}
       />
+      <GeneratorButton generateRandomCharacters={generateRandomCharacters} />
     </div>
   );
 };
