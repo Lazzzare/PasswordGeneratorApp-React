@@ -2,20 +2,22 @@ import React from "react";
 
 interface StrengthProps {
   count: number;
+  rangeValue: number;
+  generateRandomCharacters: () => void;
 }
 
-const Strength: React.FC<StrengthProps> = ({ count }) => {
+const Strength: React.FC<StrengthProps> = ({ count, rangeValue }) => {
   const determineStrength = (count: number) => {
-    if (count === 1) {
+    if (count === 1 && rangeValue >= 3) {
       return "TOO WEAK!";
-    } else if (count === 2) {
+    } else if (count === 2 && rangeValue > 5) {
       return "WEAK";
-    } else if (count === 3) {
+    } else if (count === 3 && rangeValue > 8) {
       return "MEDIUM";
-    } else if (count === 4) {
+    } else if (count === 4 && rangeValue > 6) {
       return "STRONG";
     }
-    return "Unknown Strength";
+    return "";
   };
 
   const renderBars = (count: number) => {
