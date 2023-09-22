@@ -54,6 +54,7 @@ const Input = ({
       <form className="max-w-[343px] md:max-w-[540px] mx-auto">
         <div className="flex flex-row items-center relative w-full">
           <input
+            readOnly
             value={randomCharacters}
             onChange={(e) => setRandomCharacters(e.target.value)}
             type="text"
