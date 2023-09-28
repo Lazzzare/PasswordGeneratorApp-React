@@ -11,6 +11,7 @@ const App = () => {
     false,
     false,
   ]);
+  //
 
   const handleCheckboxClick = (index: number) => {
     const updatedCheckboxStates = [...checkboxStates];
