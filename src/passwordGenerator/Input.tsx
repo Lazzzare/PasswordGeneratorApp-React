@@ -6,6 +6,8 @@ interface InputProps {
   setRandomCharacters: (e: string) => void;
 }
 
+//
+
 const Input = ({
   title,
   randomCharacters,
