@@ -53,7 +53,7 @@ const Strength: React.FC<StrengthProps> = ({ count, rangeValue }) => {
       <h3 className="text-grey">STRENGTH</h3>
       <div className="flex items-center gap-4">
         <h2 className="text-grey text-lg">{determineStrength(count)}</h2>
-        {/* Bars */}
+        {/* Barssss */}
         <div className="flex flex-row gap-2">{renderBars(count)}</div>
       </div>
     </div>
